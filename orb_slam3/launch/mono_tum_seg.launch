@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="orb_slam3" type="mono_tum_seg" name="mono_tum_seg" output="screen" required="true"
+        args="
+            ~/DeepLabv3p_ORB_SLAM3/src/orb_slam3/src/ORB_SLAM3/Vocabulary/ORBvoc.txt 
+            ~/DeepLabv3p_ORB_SLAM3/src/orb_slam3/src/mono_TUM3.yaml
+            ~/dataset_tum_rgbd/rgbd_dataset_freiburg3_walking_xyz"/>
+    <node pkg="segment_interface" type="predict.py" name="predict" required="true" />
+</launch>
